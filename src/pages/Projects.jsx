@@ -27,7 +27,7 @@ function Projects() {
             </p>
           </div>
           <Link className="button button--primary" to="/#contact">
-            Request a Quote
+            Let's Connect
           </Link>
         </div>
       </section>

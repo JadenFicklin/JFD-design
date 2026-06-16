@@ -21,8 +21,8 @@ function Layout() {
             <Link to="/#portfolio">Portfolio</Link>
             <Link to="/#process">Process</Link>
             <Link to="/#contact" className="nav__cta">
-              <span className="nav__cta-label nav__cta-label--long">Get a Quote</span>
-              <span className="nav__cta-label nav__cta-label--short">Quote</span>
+              <span className="nav__cta-label nav__cta-label--long">Let's Connect</span>
+              <span className="nav__cta-label nav__cta-label--short">Connect</span>
             </Link>
           </nav>
         </div>

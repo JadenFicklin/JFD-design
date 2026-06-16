@@ -159,7 +159,7 @@ function Home() {
             </p>
             <div className="hero__actions">
               <Link className="button button--primary" to="/#contact">
-                Request a Quote
+                Let's Connect
               </Link>
               <Link className="button button--hero" to="/#portfolio">
                 View Portfolio
