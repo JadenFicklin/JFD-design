@@ -22,7 +22,8 @@ function Layout() {
             <Link to="/#process">Process</Link>
             <Link to="/#about">About</Link>
             <Link to="/#contact" className="nav__cta">
-              Get a Quote
+              <span className="nav__cta-label nav__cta-label--long">Get a Quote</span>
+              <span className="nav__cta-label nav__cta-label--short">Quote</span>
             </Link>
           </nav>
         </div>

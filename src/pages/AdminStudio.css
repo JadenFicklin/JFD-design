@@ -246,3 +246,63 @@
     grid-template-columns: 1fr;
   }
 }
+
+@media (max-width: 768px) {
+  .admin-page {
+    padding: 1rem 0.75rem 2rem;
+    padding-bottom: max(2rem, env(safe-area-inset-bottom));
+  }
+
+  .admin-login {
+    padding: 1.25rem;
+  }
+
+  .admin-header {
+    flex-direction: column;
+    align-items: stretch;
+    margin-bottom: 1.5rem;
+  }
+
+  .admin-header__actions,
+  .admin-form__actions,
+  .admin-project-item__actions {
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  .admin-header__actions .admin-button,
+  .admin-form__actions .admin-button,
+  .admin-project-item__actions .admin-button {
+    width: 100%;
+    min-height: 2.75rem;
+  }
+
+  .admin-panel {
+    padding: 1.15rem;
+  }
+
+  .admin-form input,
+  .admin-form textarea,
+  .admin-login input {
+    font-size: 16px;
+  }
+
+  .admin-bulk-upload {
+    padding: 1rem;
+  }
+
+  .admin-bulk-upload input[type='file'] {
+    max-width: 100%;
+  }
+}
+
+@media (max-width: 600px) {
+  .admin-header h1,
+  .admin-login h1 {
+    font-size: 1.6rem;
+  }
+
+  .admin-panel h2 {
+    font-size: 1.25rem;
+  }
+}
