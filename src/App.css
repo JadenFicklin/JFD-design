@@ -381,6 +381,71 @@
   border-color: var(--accent);
 }
 
+.form-notice {
+  position: fixed;
+  inset: 0;
+  z-index: 40;
+  display: grid;
+  place-items: center;
+  padding: 1.5rem;
+  background: rgba(26, 43, 60, 0.55);
+  backdrop-filter: blur(4px);
+}
+
+.form-notice__panel {
+  width: min(100%, 28rem);
+  padding: 2rem;
+  border-radius: var(--radius);
+  background: var(--white);
+  box-shadow: var(--shadow);
+  text-align: center;
+}
+
+.form-notice__eyebrow {
+  margin: 0 0 1rem;
+  font-size: 0.8rem;
+  font-weight: 700;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--gold);
+}
+
+.form-notice__icon {
+  display: grid;
+  place-items: center;
+  width: 3.25rem;
+  height: 3.25rem;
+  margin: 0 auto 1rem;
+  border-radius: 50%;
+  font-size: 1.35rem;
+  font-weight: 700;
+}
+
+.form-notice__icon--success {
+  color: #1f5f45;
+  background: #e8f6ef;
+}
+
+.form-notice__icon--error {
+  color: #8f2f2f;
+  background: #fdeeee;
+}
+
+.form-notice__panel h2 {
+  margin: 0 0 0.75rem;
+  font-size: 1.5rem;
+}
+
+.form-notice__panel p {
+  margin: 0 0 1.5rem;
+  color: var(--ink-soft);
+  line-height: 1.6;
+}
+
+.form-notice__button {
+  width: 100%;
+}
+
 .footer {
   padding: 1.5rem 0 2rem;
   border-top: 1px solid rgba(26, 43, 60, 0.08);

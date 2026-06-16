@@ -13,7 +13,7 @@ function Layout() {
               JFD
             </span>
             <span>
-              JFD <strong>Design</strong>
+              <strong>Design</strong>
             </span>
           </Link>
           <nav className="nav" aria-label="Main navigation">

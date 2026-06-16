@@ -31,6 +31,7 @@ function ImageLightbox({ images, activeIndex, onClose, onChange, projectTitle })
   const current = images[activeIndex]
   const viewportRef = useRef(null)
   const dragRef = useRef(null)
+  const skipNextClickRef = useRef(false)
   const [zoom, setZoom] = useState(1)
   const [pan, setPan] = useState({ x: 0, y: 0 })
 
@@ -92,24 +93,30 @@ function ImageLightbox({ images, activeIndex, onClose, onChange, projectTitle })
   }
 
   const handlePointerDown = (event) => {
-    if (zoom <= 1) return
-
     dragRef.current = {
       startX: event.clientX,
       startY: event.clientY,
       originX: pan.x,
       originY: pan.y,
       pointerId: event.pointerId,
+      moved: false,
     }
 
-    event.currentTarget.setPointerCapture(event.pointerId)
+    if (zoom > 1) {
+      event.currentTarget.setPointerCapture(event.pointerId)
+    }
   }
 
   const handlePointerMove = (event) => {
     if (!dragRef.current || dragRef.current.pointerId !== event.pointerId) return
+    if (zoom <= 1) return
 
     const deltaX = event.clientX - dragRef.current.startX
     const deltaY = event.clientY - dragRef.current.startY
+
+    if (Math.abs(deltaX) > 4 || Math.abs(deltaY) > 4) {
+      dragRef.current.moved = true
+    }
 
     setPan({
       x: dragRef.current.originX + deltaX,
@@ -120,17 +127,30 @@ function ImageLightbox({ images, activeIndex, onClose, onChange, projectTitle })
   const handlePointerUp = (event) => {
     if (!dragRef.current || dragRef.current.pointerId !== event.pointerId) return
 
+    skipNextClickRef.current = dragRef.current.moved
     dragRef.current = null
-    event.currentTarget.releasePointerCapture(event.pointerId)
+
+    if (zoom > 1) {
+      event.currentTarget.releasePointerCapture(event.pointerId)
+    }
   }
 
-  const handleDoubleClick = () => {
+  const toggleZoom = () => {
     if (zoom > 1) {
       resetView()
       return
     }
 
     changeZoom(2)
+  }
+
+  const handleViewportClick = () => {
+    if (skipNextClickRef.current) {
+      skipNextClickRef.current = false
+      return
+    }
+
+    toggleZoom()
   }
 
   if (activeIndex === null || !current) return null
@@ -200,7 +220,7 @@ function ImageLightbox({ images, activeIndex, onClose, onChange, projectTitle })
               onPointerMove={handlePointerMove}
               onPointerUp={handlePointerUp}
               onPointerCancel={handlePointerUp}
-              onDoubleClick={handleDoubleClick}
+              onClick={handleViewportClick}
             >
               <img
                 src={current.url}
@@ -221,7 +241,7 @@ function ImageLightbox({ images, activeIndex, onClose, onChange, projectTitle })
 
         <div className="lightbox__footer">
           <p className="lightbox__hint">
-            Scroll or use + / − to zoom. Double-click to zoom in or reset. Drag to pan when zoomed.
+            Click, scroll, or use + / − to zoom. Click again to reset. Drag to pan when zoomed.
           </p>
 
           {images.length > 1 ? (

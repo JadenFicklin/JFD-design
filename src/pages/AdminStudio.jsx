@@ -64,7 +64,7 @@ function ImageFields({ items, onChange, onRemove }) {
 
 function AdminStudio() {
   const { isAuthenticated, authLoading, login, logout } = useAuth()
-  const [email, setEmail] = useState(() => import.meta.env.VITE_ADMIN_EMAIL || '')
+  const [email, setEmail] = useState('')
   const [password, setPassword] = useState('')
   const [loginError, setLoginError] = useState('')
   const [loginLoading, setLoginLoading] = useState(false)
@@ -277,7 +277,6 @@ function AdminStudio() {
                 autoComplete="email"
                 value={email}
                 onChange={(event) => setEmail(event.target.value)}
-                placeholder="you@gmail.com"
                 required
               />
             </label>

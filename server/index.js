@@ -7,6 +7,7 @@ import multer from 'multer'
 import path from 'path'
 import fs from 'fs/promises'
 import { createId, getUploadsDir, readProjects, writeProjects } from './storage.js'
+import { isMailConfigured, sendContactEmail } from './mail.js'
 
 dotenv.config()
 
@@ -67,6 +68,46 @@ function parseImageMeta(rawValue) {
     return []
   }
 }
+
+function isValidEmail(value) {
+  return /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(value)
+}
+
+app.post('/api/contact', async (req, res) => {
+  if (!isMailConfigured()) {
+    res.status(503).json({
+      error: 'Contact form email is not configured on the server yet.',
+    })
+    return
+  }
+
+  const name = String(req.body?.name || '').trim()
+  const email = String(req.body?.email || '').trim()
+  const message = String(req.body?.message || '').trim()
+
+  if (!name || !email || !message) {
+    res.status(400).json({ error: 'Name, email, and project details are required.' })
+    return
+  }
+
+  if (!isValidEmail(email)) {
+    res.status(400).json({ error: 'Please enter a valid email address.' })
+    return
+  }
+
+  if (name.length > 120 || email.length > 254 || message.length > 5000) {
+    res.status(400).json({ error: 'One or more fields are too long.' })
+    return
+  }
+
+  try {
+    await sendContactEmail({ name, email, message })
+    res.json({ ok: true })
+  } catch (error) {
+    console.error('Contact form email failed:', error)
+    res.status(500).json({ error: 'Unable to send your inquiry right now. Please try again shortly.' })
+  }
+})
 
 app.post('/api/auth/login', async (req, res) => {
   const { username, password } = req.body || {}
