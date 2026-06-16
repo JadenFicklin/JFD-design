@@ -1,0 +1,2 @@
+User-agent: *
+Disallow: /jf-studio-7m3p

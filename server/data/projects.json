@@ -1,0 +1,60 @@
+[
+  {
+    "id": "mqfw9rszzn5vie",
+    "title": "project title",
+    "summary": "short summary",
+    "description": "main project info",
+    "images": [
+      {
+        "id": "mqfw9rszwn3je8",
+        "url": "/uploads/mqfw9rsnn2pux6.jpg",
+        "caption": "caption 1",
+        "alt": "alt text"
+      },
+      {
+        "id": "mqfw9rsztsl2ha",
+        "url": "/uploads/mqfw9rsonz0lz6.jpg",
+        "caption": "caption 2",
+        "alt": "alt text 2"
+      },
+      {
+        "id": "mqfw9rszg8sggl",
+        "url": "/uploads/mqfw9rspt3lmgh.jpg",
+        "caption": "",
+        "alt": "project title"
+      },
+      {
+        "id": "mqfw9rsz3tx0xz",
+        "url": "/uploads/mqfw9rsr1lpfmz.jpg",
+        "caption": "",
+        "alt": "project title"
+      },
+      {
+        "id": "mqfw9rszq5hh5q",
+        "url": "/uploads/mqfw9rsrh4ve1o.png",
+        "caption": "",
+        "alt": "project title"
+      }
+    ],
+    "coverImage": "/uploads/mqfw9rsnn2pux6.jpg",
+    "createdAt": "2026-06-16T00:19:07.139Z",
+    "updatedAt": "2026-06-16T00:19:07.139Z"
+  },
+  {
+    "id": "mqfw4rcwet6kny",
+    "title": "Anna Thomas test",
+    "summary": "short summary",
+    "description": "maint text",
+    "images": [
+      {
+        "id": "mqfw4rcwvu5ts9",
+        "url": "/uploads/mqfw4rcsytahil.jpg",
+        "caption": "caption",
+        "alt": "text for image"
+      }
+    ],
+    "coverImage": "/uploads/mqfw4rcsytahil.jpg",
+    "createdAt": "2026-06-16T00:15:13.280Z",
+    "updatedAt": "2026-06-16T00:15:36.398Z"
+  }
+]

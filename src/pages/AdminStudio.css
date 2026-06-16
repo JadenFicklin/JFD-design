@@ -1,0 +1,248 @@
+.admin-page {
+  min-height: 100vh;
+  padding: 2rem 1rem 3rem;
+  background: #101820;
+  color: #f6f1e8;
+}
+
+.admin-login,
+.admin-panel,
+.admin-header {
+  width: min(1120px, 100%);
+  margin-inline: auto;
+}
+
+.admin-login {
+  max-width: 420px;
+  padding: 2rem;
+  border: 1px solid rgba(246, 241, 232, 0.12);
+  border-radius: 18px;
+  background: rgba(255, 255, 255, 0.04);
+}
+
+.admin-login h1,
+.admin-header h1,
+.admin-panel h2 {
+  margin: 0 0 1rem;
+}
+
+.admin-login__lead {
+  margin: 0 0 1.25rem;
+  color: rgba(246, 241, 232, 0.72);
+  font-size: 0.95rem;
+}
+
+.admin-header {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+  margin-bottom: 2rem;
+}
+
+.admin-header__actions,
+.admin-form__actions,
+.admin-project-item__actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.75rem;
+}
+
+.admin-layout {
+  display: grid;
+  grid-template-columns: 1.2fr 0.8fr;
+  gap: 1.5rem;
+  width: min(1120px, 100%);
+  margin-inline: auto;
+}
+
+.admin-panel {
+  padding: 1.5rem;
+  border: 1px solid rgba(246, 241, 232, 0.12);
+  border-radius: 18px;
+  background: rgba(255, 255, 255, 0.04);
+}
+
+.admin-form,
+.admin-login form {
+  display: grid;
+  gap: 1rem;
+}
+
+.admin-form label,
+.admin-login label {
+  display: grid;
+  gap: 0.45rem;
+  font-size: 0.92rem;
+  font-weight: 600;
+}
+
+.admin-form input,
+.admin-form textarea,
+.admin-login input {
+  width: 100%;
+  padding: 0.8rem 0.9rem;
+  border: 1px solid rgba(246, 241, 232, 0.16);
+  border-radius: 10px;
+  background: rgba(0, 0, 0, 0.25);
+  color: inherit;
+  font: inherit;
+}
+
+.admin-form__images-head {
+  display: block;
+}
+
+.admin-form__images-head h3,
+.admin-existing-images p {
+  margin: 0;
+}
+
+.admin-form__images-help {
+  margin: 0.35rem 0 0;
+  color: rgba(246, 241, 232, 0.72);
+  font-size: 0.92rem;
+}
+
+.admin-form__images-count {
+  margin: 0;
+  color: #b8ddb0;
+  font-size: 0.92rem;
+  font-weight: 700;
+}
+
+.admin-form__images-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.75rem;
+}
+
+.admin-bulk-upload {
+  display: grid;
+  gap: 0.35rem;
+  padding: 1.25rem;
+  border: 1px dashed rgba(246, 241, 232, 0.28);
+  border-radius: 12px;
+  background: rgba(255, 255, 255, 0.03);
+  cursor: pointer;
+}
+
+.admin-bulk-upload__title {
+  font-weight: 800;
+}
+
+.admin-bulk-upload__hint {
+  color: rgba(246, 241, 232, 0.72);
+  font-size: 0.9rem;
+}
+
+.admin-bulk-upload input[type='file'] {
+  margin-top: 0.35rem;
+  color: rgba(246, 241, 232, 0.82);
+  font: inherit;
+}
+
+.admin-images {
+  display: grid;
+  gap: 1rem;
+}
+
+.admin-image-row {
+  display: grid;
+  gap: 0.75rem;
+  padding: 1rem;
+  border: 1px solid rgba(246, 241, 232, 0.12);
+  border-radius: 12px;
+}
+
+.admin-image-row__preview img,
+.admin-existing-images img,
+.admin-project-item img {
+  width: 100%;
+  max-height: 180px;
+  object-fit: cover;
+  border-radius: 10px;
+}
+
+.admin-existing-images ul {
+  display: grid;
+  gap: 0.75rem;
+  margin: 0.75rem 0 0;
+  padding: 0;
+  list-style: none;
+}
+
+.admin-project-list {
+  display: grid;
+  gap: 1rem;
+}
+
+.admin-project-item {
+  display: grid;
+  gap: 0.75rem;
+  padding: 1rem;
+  border: 1px solid rgba(246, 241, 232, 0.12);
+  border-radius: 12px;
+}
+
+.admin-project-item h3 {
+  margin: 0 0 0.35rem;
+}
+
+.admin-project-item p {
+  margin: 0 0 0.75rem;
+  color: rgba(246, 241, 232, 0.72);
+}
+
+.admin-button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0.7rem 1rem;
+  border: 1px solid rgba(246, 241, 232, 0.18);
+  border-radius: 999px;
+  background: transparent;
+  color: inherit;
+  font: inherit;
+  font-weight: 700;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+.admin-button--primary {
+  border-color: transparent;
+  background: #c9a96e;
+  color: #101820;
+}
+
+.admin-button--ghost {
+  background: rgba(255, 255, 255, 0.06);
+}
+
+.admin-button--danger {
+  border-color: rgba(255, 120, 120, 0.35);
+  color: #ffb4b4;
+}
+
+.admin-error {
+  margin: 0;
+  color: #ffb4b4;
+}
+
+.admin-message {
+  margin: 0;
+  color: #b8ddb0;
+}
+
+.admin-back-link {
+  display: inline-block;
+  margin-top: 1rem;
+  color: rgba(246, 241, 232, 0.72);
+}
+
+@media (max-width: 900px) {
+  .admin-layout {
+    grid-template-columns: 1fr;
+  }
+}
