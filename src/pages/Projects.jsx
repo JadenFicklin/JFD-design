@@ -20,13 +20,14 @@ function Projects() {
         <div className="container page-hero__inner">
           <div>
             <p className="eyebrow">Portfolio</p>
-            <h1>Projects from JFD Design.</h1>
+            <h1>Residential drafting and design projects</h1>
             <p className="page-hero__lead">
-              Completed residential drafting work showcased by JFD Design.
+              Floor plans, remodels, additions, and custom homes. See the quality and clarity
+              contractors and builders can expect on their next project.
             </p>
           </div>
           <Link className="button button--primary" to="/#contact">
-            Start Your Project
+            Request a Quote
           </Link>
         </div>
       </section>
